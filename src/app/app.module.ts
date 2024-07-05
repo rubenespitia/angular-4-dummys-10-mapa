@@ -1,12 +1,30 @@
-import { NgModule } from '@angular/core';
+import * as core from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MiniMapComponent } from './components/mini-map/mini-map.component';
+import { SideMenuComponent } from './components/side-menu/side-menu.component';
 
-@NgModule({
+import mapboxgl from 'mapbox-gl';
+(mapboxgl as any).accessToken = 'pk.eyJ1Ijoid2FudGVkZ3VsbDIiLCJhIjoiY2x5OTJtNHBoMG1qejJscHExZnAzNWs4YyJ9.40vNYyMl-JNsGvdjTOSeFQ';
+
+import { FullScreenPageComponent } from './pages/full-screen-page/full-screen-page.component';
+import { MarkersPageComponent } from './pages/markers-page/markers-page.component';
+import { PropertiesPageComponent } from './pages/properties-page/properties-page.component';
+import { ZoomRangePageComponent } from './pages/zoom-range-page/zoom-range-page.component';
+import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component';
+
+@core.NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MiniMapComponent,
+    SideMenuComponent,
+    MapsLayoutComponent,
+    FullScreenPageComponent,
+    MarkersPageComponent,
+    PropertiesPageComponent,
+    ZoomRangePageComponent
   ],
   imports: [
     BrowserModule,
